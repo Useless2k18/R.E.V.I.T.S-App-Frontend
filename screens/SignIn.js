@@ -33,6 +33,7 @@ export default class SignIn extends Component {
 
       componentWillUnmount () {
         this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
       }
     
       _keyboardDidShow = () => {
@@ -95,7 +96,7 @@ export default class SignIn extends Component {
                             autoCorrect={false} 
                             autoCapitalize='none' 
                             returnKeyType='go'
-                            secureTextEntry={false}
+                            secureTextEntry={true}
                             autoCorrect={false}
                             autoCapitalize='none'
                             containerStyle={styles.inputContainer}
