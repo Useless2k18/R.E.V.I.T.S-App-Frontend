@@ -15,13 +15,13 @@ class Main extends Component{
         };
     
         setTimeout(() => {
-            this.setState({currentScreen: 'SignIn'})
+            this.setState({currentScreen: 'App'})
         }, 3000);
     }
 
     render(){
         const {currentScreen} = this.state;
-        let mainscreen = currentScreen === 'Splash' ? <Splash/> : <SignIn/>
+        let mainscreen = currentScreen === 'Splash' ? <Splash/> : <App/>
         return mainscreen;
     }
 
