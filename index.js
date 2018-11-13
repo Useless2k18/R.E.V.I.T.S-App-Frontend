@@ -5,6 +5,7 @@ import App from './App';
 import Splash from './screens/Splash';
 import SignIn from './screens/SignIn'
 import {name as appName} from './app.json';
+import {createStackNavigator} from 'react-navigation';
 
 class Main extends Component{
 
@@ -21,10 +22,21 @@ class Main extends Component{
 
     render(){
         const {currentScreen} = this.state;
-        let mainscreen = currentScreen === 'Splash' ? <Splash/> : <App/>
+        let mainscreen = currentScreen === 'Splash' ? <Splash/> : <RootStack/>
         return mainscreen;
     }
 
 }
 
 AppRegistry.registerComponent(appName, () => Main);
+
+const RootStack = createStackNavigator(
+    {
+      Home : App,
+      SignIn: SignIn,
+    },
+    {
+        initialRouteName: 'Home',
+        headerMode:'none',
+    }
+  );
