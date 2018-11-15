@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ImageBackground, StyleSheet, Image, View } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Card } from 'native-base';
+import { Container, Content, Button, Text, } from 'native-base';
 import {createStackNavigator} from 'react-navigation';
 
 
@@ -19,7 +19,7 @@ export default class App extends Component {
               <Button rounded block style={styles.buttonStyles} onPress={() => this.props.navigation.navigate('SignIn')}>
                 <Text>Sign In</Text>
               </Button>
-              <Button rounded block style={styles.buttonStyles}>
+              <Button rounded block style={styles.buttonStyles} onPress={() => this.props.navigation.navigate('SignUp')}>
                 <Text>Sign Up</Text>
               </Button>
             </View>
