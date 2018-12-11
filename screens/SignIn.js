@@ -98,7 +98,6 @@ export default class SignIn extends Component {
                             returnKeyType='go'
                             secureTextEntry={true}
                             autoCorrect={false}
-                            autoCapitalize='none'
                             containerStyle={styles.inputContainer}
                             ref={"inputPassword"}
                             selectionColor={'white'}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ImageBackground, StyleSheet,Image,View } from 'react-native';
-import { Container, Content, Button, Text, Form, Item, Label, } from 'native-base';
+import { Container, Content, Button, Text, Form, Item, Label, Input, } from 'native-base';
 
 
 export default class SignUp extends Component {
@@ -13,12 +13,52 @@ export default class SignUp extends Component {
                     <Text style={{alignSelf:'center',marginTop:10,fontFamily:'monospace',fontWeight:'bold',fontSize:23}}>Register Details:</Text>
                     <Form>
                         <Item floatingLabel>
-                            <Label>Email</Label>
+                            <Label style={styles.fieldLabels}>Email</Label>
+                            <Input
+                              autoCorrect={false} 
+                              autoCapitalize='none'
+                              returnKeyType='next'
+
+                            />
                         </Item>
                         <Item floatingLabel>
-                            <Label>Name</Label>
+                            <Label style={styles.fieldLabels}>First Name</Label>
+                            <Input
+                              autoCorrect={false} 
+                              autoCapitalize='none'
+                              returnKeyType='next'
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label style={styles.fieldLabels}>Last Name</Label>
+                            <Input
+                              autoCorrect={false} 
+                              autoCapitalize='none'
+                              returnKeyType='next'
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label style={styles.fieldLabels}>Password</Label>
+                            <Input
+                              secureTextEntry={true}
+                              autoCorrect={false} 
+                              autoCapitalize='none' 
+                              returnKeyType='next'
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label style={styles.fieldLabels}>Re-enter Password</Label>
+                            <Input
+                              secureTextEntry={true}
+                              autoCorrect={false} 
+                              autoCapitalize='none' 
+                              returnKeyType='go'
+                            />
                         </Item>
                     </Form>
+                    <Button rounded block style={styles.buttonStyles}>
+                      <Text>Register</Text>
+                    </Button>
                 </View>
             </Content>
           </ImageBackground>
@@ -34,9 +74,19 @@ const styles = StyleSheet.create({
     flex:1,
   },
   container:{
-    flex:1,
+    flex:3,
     paddingLeft:20,
     paddingRight:20,
     justifyContent:'center',
+  },
+  fieldLabels:{
+    fontFamily:'monospace',
+    fontSize:18,
+    fontWeight:'bold',
+    color:'#ffffff',
+  },
+  buttonStyles:{
+    marginVertical:20,
+    backgroundColor:"#000075",
   },
 })
